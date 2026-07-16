@@ -1,0 +1,21 @@
+# Fail on medium-or-higher vulnerabilities.
+check-for-app-update: false
+db:
+    auto-update: true
+    max-allowed-built-age: "120h"
+    require-update-check: false
+    validate-age: true
+    validate-by-hash-on-start: true
+fail-on-severity: "medium"
+output:
+    - "table"
+pretty: false
+registry:
+    insecure-skip-tls-verify: false
+    insecure-use-http: false
+search:
+    indexed-archives: true
+    scope: "squashed"
+    unindexed-archives: false
+show-suppressed: false
+sort-by: "risk"

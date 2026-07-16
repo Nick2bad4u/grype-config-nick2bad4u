@@ -1,0 +1,22 @@
+# High-severity CI gate with a SARIF report in the consumer workspace.
+check-for-app-update: false
+db:
+    auto-update: true
+    max-allowed-built-age: "120h"
+    require-update-check: true
+    validate-age: true
+    validate-by-hash-on-start: true
+fail-on-severity: "high"
+file: "grype-results.sarif"
+output:
+    - "sarif"
+pretty: false
+registry:
+    insecure-skip-tls-verify: false
+    insecure-use-http: false
+search:
+    indexed-archives: true
+    scope: "squashed"
+    unindexed-archives: false
+show-suppressed: false
+sort-by: "risk"
